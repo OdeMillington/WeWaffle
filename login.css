@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Poppins&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #567de8;
+}
+
+
+/* Header of Form Text */
+
+#welcome {
+    font-family: 'Poppins', sans-serif;
+    font-size: 25px;
+    text-align: center;
+    border-bottom: 2px solid;
+    margin-bottom: 1.5em;
+}
+
+
+#welcome:hover {
+    transform: translateY(-5px);
+
+}
+
+#companyName {
+    margin: 0px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(./Images/copyright-regular.svg);
+    background-repeat: no-repeat;
+    background-size: 10px;
+    background-position: 250px 13px;
+}
+
+/* End of Header Text */
+
+.container {
+    height:65%;
+    width: 30%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid white;
+    border-radius: 25px;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-crt {
+    width: 70%;
+}
+
+
+/* Form Element Formatting */
+
+.items {
+    display: flex;
+    flex-direction: column;
+    gap:3em
+}
+
+.uname, .pass {
+    display: flex;
+    flex-direction: column;
+    gap:.5em
+}
+
+.showPasswordDiv {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border: 0px solid;
+    height:10px;
+    font-size: 15px;
+}
+
+input[type='checkbox'] {
+    height: 25px;
+    border: 0px;
+    box-shadow: none;
+}
+
+label {
+    margin-left: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+input {
+    height: 35px;
+    border: 2px solid gray;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    font-size: 20px;
+    font-family:'Montserrat', sans-serif;
+}
+
+input[id='username']{
+    background-image: url(./Images/user-solid.svg);
+    background-size: 15px;
+    background-position: 10px 11px;
+    background-repeat: no-repeat;
+    padding-left: 40px;
+}
+
+
+input[id='password'] {
+    background-image: url(./Images/key-solid.svg);
+    background-size: 15px;
+    background-position: 10px 11px;
+    background-repeat: no-repeat;
+    padding-left: 40px;
+}
+
+input[type='submit'] {
+    height: 38px;
+    border-color: #191c3b;
+    color:white;
+    background-color:#191c3b;
+}
+
+input[type='submit']:hover {
+    transform: translateY(-2px);
+}
+
+
+/* End of Form Formatting */
