@@ -7,6 +7,7 @@
     <link rel="icon" type="image/x-icon" href="./Images/Favicon/favicon.ico">
     <title>WeWaffle | Login</title>
 </head>
+<?php session_start(); ?>
 
 <body>
 
@@ -33,9 +34,9 @@
             </div>
 
        </div>
-        
+
         <div class="form-crt">
-            <form action="ye.php" method="post">
+            <form action="message.php" method="post">
                 <div class="items">
                     <div class="uname">
                         <label for="username">Username</label>
