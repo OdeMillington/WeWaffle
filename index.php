@@ -10,7 +10,7 @@
         font-family: 'Montserrat', sans-serif;
         color:crimson;
         font-weight: bold;
-        text-align:center
+        text-align:center;
     }
     
     </style>
@@ -61,25 +61,28 @@
 
                         <div class="showPasswordDiv">
                             <label for="showPass">Show Password</label>
-                            <input type="checkbox" id="showpass" onclick="showPass()"">
+                            <input type="checkbox" id="showpass" onclick="showPass()">
                         </div>
-
-                        <div class="error">
-                           <?php 
-                           
-                           if (isset($_SESSION['error'])) {
-                            echo "<p id='error'>Invalid Username/Password <p>";
-                            session_unset();
-                           }
-                           
-                           ?>
-                           
-                        </div>
-                        
+     
+                    </div>
                     </div>
 
-                    <input type="submit" value="Login">
-                </div>
+                    <div class="bottom">
+                        <div class="error">
+                            <?php 
+                            
+                            if (isset($_SESSION['error'])) {
+                                echo "<p id='error'>Invalid Username/Password <p>";
+                                session_unset();
+                            }
+                            
+                            ?>
+                            
+                        </div>
+
+                        <input type="submit" value="Login">
+                    </div>
+
             </form>
         </div>
     </div>

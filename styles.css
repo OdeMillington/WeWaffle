@@ -53,6 +53,7 @@ body {
     background-color: white;
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     border: 1px solid white;
     border-radius: 25px;
     gap: 10px;
@@ -67,6 +68,7 @@ body {
 
 /* Form Element Formatting */
 
+
 .items {
     display: flex;
     flex-direction: column;
@@ -77,6 +79,13 @@ body {
     display: flex;
     flex-direction: column;
     gap:.5em
+}
+
+.bottom {
+    padding-top:15px;
+    display: flex;
+    flex-direction: column;
+    gap:1em;
 }
 
 .showPasswordDiv {
