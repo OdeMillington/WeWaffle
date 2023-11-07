@@ -53,7 +53,6 @@ body {
     background-color: white;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     border: 1px solid white;
     border-radius: 25px;
     gap: 10px;
