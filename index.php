@@ -1,13 +1,26 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <style>
+
+    #error {
+        font-family: 'Montserrat', sans-serif;
+        color:crimson;
+        font-weight: bold;
+        text-align:center
+    }
+    
+    </style>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="./Images/Favicon/favicon.ico">
     <title>WeWaffle | Login</title>
 </head>
-<?php session_start(); ?>
 
 <body>
 
@@ -49,6 +62,18 @@
                         <div class="showPasswordDiv">
                             <label for="showPass">Show Password</label>
                             <input type="checkbox" id="showpass" onclick="showPass()"">
+                        </div>
+
+                        <div class="error">
+                           <?php 
+                           
+                           if (isset($_SESSION['error'])) {
+                            echo "<p id='error'>Invalid Username/Password <p>";
+                            session_unset();
+                           }
+                           
+                           ?>
+                           
                         </div>
                         
                     </div>
