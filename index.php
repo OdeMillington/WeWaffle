@@ -60,7 +60,7 @@
                         <input type="password" id="password" name="password">
 
                         <div class="showPasswordDiv">
-                            <label for="showPass">Show Password</label>
+                            <label id="showpass" for="showPass">Show Password</label>
                             <input type="checkbox" id="showpass" onclick="showPass()">
                         </div>
      
@@ -68,6 +68,7 @@
                     </div>
 
                     <div class="bottom">
+                        
                         <div class="error">
                             <?php 
                             
