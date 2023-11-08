@@ -51,8 +51,8 @@ body {
 /* End of Header Text */
 
 .container {
-    height:65%;
-    width: 30%;
+    height:550px;
+    width: 500px;
     background-color: white;
     display: flex;
     flex-direction: column;
