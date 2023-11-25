@@ -22,9 +22,11 @@
 </head>
 
 <body>
+
     <?php
         unset($_SESSION['animation-played']);
     ?>
+    
     <script>
         function showPass() {
           let pass = document.getElementById("password");
