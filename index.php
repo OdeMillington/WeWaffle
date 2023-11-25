@@ -3,9 +3,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="./Images/Favicon/favicon.ico">
+    <title>WeWaffle | Login</title>
 
     <style>
-
     #error {
         font-family: 'Montserrat', sans-serif;
         color:crimson;
@@ -15,15 +19,12 @@
     
     </style>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/x-icon" href="./Images/Favicon/favicon.ico">
-    <title>WeWaffle | Login</title>
 </head>
 
 <body>
-
+    <?php
+        unset($_SESSION['animation-played']);
+    ?>
     <script>
         function showPass() {
           let pass = document.getElementById("password");
@@ -34,7 +35,7 @@
           }
         }
     </script>
-
+<div class ="login-page">
     <div class="container">
        <div class="info">
         
@@ -87,6 +88,7 @@
             </form>
         </div>
     </div>
+</div>
 </body>
 
 </html>
