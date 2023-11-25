@@ -10,6 +10,7 @@
     <title>WeWaffle | Login</title>
 
     <style>
+        
     #error {
         font-family: 'Montserrat', sans-serif;
         color:crimson;

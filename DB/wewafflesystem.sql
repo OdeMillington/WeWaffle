@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 07, 2023 at 01:55 AM
+-- Generation Time: Nov 25, 2023 at 11:34 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -28,9 +28,9 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `userlogin` (
-  `username` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `role` varchar(10) NOT NULL
+  `username` varchar(30) NOT NULL,
+  `password` varchar(20) NOT NULL,
+  `role` varchar(8) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -38,8 +38,19 @@ CREATE TABLE `userlogin` (
 --
 
 INSERT INTO `userlogin` (`username`, `password`, `role`) VALUES
-('John', 'john123', 'Staff'),
+('Ode', 'ode123', 'Staff'),
+('Romario', 'admin123', 'Admin'),
 ('Will', 'will246', 'Staff');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `userlogin`
+--
+ALTER TABLE `userlogin`
+  ADD PRIMARY KEY (`username`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
