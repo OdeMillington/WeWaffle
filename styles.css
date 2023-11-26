@@ -12,7 +12,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #567de8;
+    background-color: rgb(32,35,48)
 }
 
 
@@ -135,7 +135,7 @@ input {
 input[id='username']{
     background-image: url(./Images/user-solid.svg);
     background-size: 15px;
-    background-position: 10px 9px;
+    background-position: 11px 7px;
     background-repeat: no-repeat;
     padding-left: 40px;
 }
@@ -247,13 +247,158 @@ input[type='submit']:hover {
 
 /* Message Page Styles */
 
-#message-container{
-    height: 100vh;
-    max-width: 400px;
-    display:flex;
-    justify-content: center;
-    align-items:center;
-    background-color: #567de8;
+.menuCompanyName {
+    margin: 0px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 40px;
+    color:#567de8;
+    border-bottom: 2px solid #872341;
+    margin-right:55px;
+    margin-left: 45px;
+    text-align: center;
+    border-radius: 10%;
 }
+
+#displayName {
+    font-size:25px;
+    color:white
+}
+
+#displayRole {
+    color:white
+}
+
+.message-container {
+    height:100vh;
+    width: 100%;
+    display: flex;
+    background-color: rgb(217, 217, 217);
+}
+
+.menu {
+    gap:2em;
+    padding-top:2em;
+    padding-left: 1em;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    max-width: 350px;
+    width:100%;
+    background-color: rgb(32,35,48)
+}
+
+
+.topMenu, .bottomMenu {
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    gap:1.5em
+}
+
+.menuOptions {
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap:1.5em;
+    height:100%;
+    padding-bottom: 1em;
+    margin-top:1.5em;
+}
+
+a {
+    text-decoration: none;
+    color: white
+}
+
+#inbox {
+    padding-left: 2em;
+    background-image: url(./Images/inbox-solid.svg);
+    background-size: 23px;
+    background-position: 10px 8px;
+    background-repeat: no-repeat;
+    
+}
+
+#createMsg {
+    padding-left: 2em;
+    background-image: url(./Images/message-solid.svg);
+    background-size: 20px;
+    background-position: 10px 9px;
+    background-repeat: no-repeat;
+    
+}
+
+#msgSummary {
+    padding-left: 2em;
+    background-image: url(./Images/gears-solid.svg);
+    background-size: 33px;
+    background-position: 5px 5px;
+    background-repeat: no-repeat;
+    
+}
+
+#searchMsg {
+    padding-left: 2em;
+    background-image: url(./Images/magnifying-glass-solid.svg);
+    background-size: 20px;
+    background-position: 10px 9px;
+    background-repeat: no-repeat;
+    
+}
+
+#delNotice {
+    padding-left: 2em;
+    background-image: url(./Images/trash-solid.svg);
+    background-size: 20px;
+    background-position: 10px 9px;
+    background-repeat: no-repeat;
+    
+}
+
+#about {
+    padding-left: 2em;
+    background-image: url(./Images/circle-info-solid.svg);
+    background-size: 22px;
+    background-position: 10px 9px;
+    background-repeat: no-repeat;
+    
+}
+
+#logout {
+    padding-left: 2em;
+    background-image: url(./Images/right-from-bracket-solid.svg);
+    background-size: 22px;
+    background-position: 10px 9px;
+    background-repeat: no-repeat;
+    
+}
+
+
+.userProfile {
+    display: flex;
+    align-items: center;
+    gap:1em
+}
+
+.ProfileBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height:65px;
+    font-size:30px;
+    width: 65px;
+    border-radius: 10%;
+    background-color: #872341;
+}
+
+
+ul {
+    list-style: none;
+
+}
+
+
 /*   */
 

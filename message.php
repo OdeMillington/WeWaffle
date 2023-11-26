@@ -6,6 +6,7 @@ session_start();
 <?php
 $conn = mysqli_connect("localhost", "root", "", "wewafflesystem");
 
+
 $username = $_POST['username'];
 $password = $_POST['password'];
 
@@ -15,6 +16,8 @@ $_SESSION['password'] = $password;
 
 
 $result = mysqli_query($conn,"SELECT * FROM userlogin WHERE username = '$username' AND password = '$password'");
+
+
 ?>
 
 <?php
@@ -23,7 +26,11 @@ $result = mysqli_query($conn,"SELECT * FROM userlogin WHERE username = '$usernam
         $_SESSION['error'] = ".";
         header("Location: index.php");
         
+    } else {
+        $_SESSION['userRole'] = $result->fetch_assoc()["role"];
+
     }
+
 ?>
 
 <!DOCTYPE html>
@@ -81,18 +88,59 @@ $result = mysqli_query($conn,"SELECT * FROM userlogin WHERE username = '$usernam
     endif;
     ?>
 
-    <div id="message-container">
-        
-        <div class="side-menu">
-            <div class ="top">
-                <h1> test here 2</h1>
 
+    <div class="message-container">
+
+
+        <div class="menu">
+            
+            
+
+        <div class=menuCompanyName>
+         <p>WeWaffle</p>
+         </div>
+
+            <div class="userInfo">
+                <div class="userProfile">
+                    <div class="ProfileBox">   <?php echo strtoupper(substr($username,0,2))  ?>  </div>
+                    <div class="username">
+                        <p id="displayName"><?php echo $username ?></p>
+                        <p id="displayRole"> <?php echo $_SESSION['userRole'] ?> </p>
+                    </div>
+                </div>
             </div>
+
+            <div class="menuOptions">
+
+
+            <div class="topMenu">
+                <p id="inbox"><a href="message.php">Inbox</a></p>
+                <p id="createMsg"><a href="create_message.php">Create Message</a></p>
+                <p id="msgSummary"><a href="message_summary.php">Message Summary</a></p>
+                
+                <?php
+                if ($_SESSION['userRole'] == "Admin") {
+                    echo '<p id="searchMsg"><a href="search_message.php">Search Messages</a></p>';
+                    echo '<p id="delNotice"><a href="delete_notice.php">Delete Notice</a></p>';
+                }
+
+                ?>
+            </div>
+
+            <div class="bottomMenu">
+                <p id="about"><a href="about.php">About</a></p>
+                <p id="logout"><a href="logout.php">Log Out</a></p>
+            </div>
+
+
+    </div>
+
         </div>
 
         <div class="main-area">
 
         </div>
+
     </div>
 
 </body>
