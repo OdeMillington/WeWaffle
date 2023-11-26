@@ -7,23 +7,8 @@ session_start();
 $conn = mysqli_connect("localhost", "root", "", "wewafflesystem");
 
 
-if (isset($_SESSION['loggedIn'])) {
-
-    $username = $_SESSION['username'];
-    $password = $_SESSION['password'];
-
-} else {
-    
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-
-    $_SESSION['username'] = $username;
-    $_SESSION['password'] = $password;
-    $_SESSION["loggedIn"] = true;
-
-}
-
-
+$username = $_SESSION['username'];
+$password = $_SESSION['password'];
 
 
 $result = mysqli_query($conn,"SELECT * FROM userlogin WHERE username = '$username' AND password = '$password'");
@@ -147,6 +132,10 @@ $result = mysqli_query($conn,"SELECT * FROM userlogin WHERE username = '$usernam
                 </div>
                 
             </div>
+        </div>
+
+        <div class="main-area">
+            
         </div>
 
     </div>
