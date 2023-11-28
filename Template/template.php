@@ -8,44 +8,10 @@ session_start();
 $conn = mysqli_connect("localhost", "root", "", "wewafflesystem");
 
 
-
-if (!isset($_SESSION['loggedIn'])) {
-
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-
-} else {
-
-    $username = $_SESSION['username'];
-    $password = $_SESSION['password'];
-
+if (!$_SESSION['loggedIn']) {
+    $_SESSION['error'];
+    header("Location: index.php");
 }
-
-
-$result = mysqli_query($conn,"SELECT * FROM userlogin WHERE username = '$username' AND password = '$password'");
-
-
-?>
-
-<?php
-
-    
-
-    if (mysqli_num_rows($result) != 1) {
-        
-        $_SESSION['error'] = ".";
-        header("Location: index.php");
-        
-    } else {
-
-        $_SESSION['userRole'] = $result->fetch_assoc()["role"];
-        $_SESSION['username'] = $username;
-        $_SESSION['password'] = $password;
-        $_SESSION['loggedIn'] = true;
-
-    }
-
-    
 
 ?>
 
@@ -152,6 +118,10 @@ $result = mysqli_query($conn,"SELECT * FROM userlogin WHERE username = '$usernam
                 </div>
                 
             </div>
+        </div>
+
+        <div class="main-area">
+            
         </div>
 
     </div>

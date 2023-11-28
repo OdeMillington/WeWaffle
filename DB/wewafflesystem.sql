@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 25, 2023 at 11:34 PM
+-- Generation Time: Nov 28, 2023 at 05:37 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -24,12 +24,28 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `message`
+--
+
+CREATE TABLE `message` (
+  `sender` varchar(30) NOT NULL,
+  `receiver` varchar(30) NOT NULL,
+  `messageTitle` varchar(70) NOT NULL,
+  `message` int(255) NOT NULL,
+  `messageType` varchar(10) NOT NULL DEFAULT 'normal',
+  `datesent` date NOT NULL,
+  `status` varchar(10) NOT NULL DEFAULT 'unread'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `userlogin`
 --
 
 CREATE TABLE `userlogin` (
-  `username` varchar(30) NOT NULL,
-  `password` varchar(20) NOT NULL,
+  `username` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+  `password` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
   `role` varchar(8) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 

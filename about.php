@@ -1,31 +1,17 @@
 <?php
 //start session
 session_start();
+
 ?>
 
 <?php
 $conn = mysqli_connect("localhost", "root", "", "wewafflesystem");
 
 
-$username = $_SESSION['username'];
-$password = $_SESSION['password'];
-
-
-$result = mysqli_query($conn,"SELECT * FROM userlogin WHERE username = '$username' AND password = '$password'");
-
-
-?>
-
-<?php
-    if (mysqli_num_rows($result) != 1) {
-        
-        $_SESSION['error'] = ".";
-        header("Location: index.php");
-        
-    } else {
-        $_SESSION['userRole'] = $result->fetch_assoc()["role"];
-
-    }
+if (!$_SESSION['loggedIn']) {
+    $_SESSION['error'];
+    header("Location: index.php");
+}
 
 ?>
 
@@ -99,11 +85,11 @@ $result = mysqli_query($conn,"SELECT * FROM userlogin WHERE username = '$usernam
             <div class="userInfo">
                 <div class="userProfile">
                     <div class="ProfileBox">   
-                        <?php echo strtoupper(substr($username,0,2))  ?>  
+                        <?php echo strtoupper(substr($_SESSION['username'],0,2))  ?>  
                     </div>
 
                     <div class="username">
-                        <p id="displayName"><?php echo $username ?></p>
+                        <p id="displayName"><?php echo $_SESSION['username'] ?></p>
                         <p id="displayRole"> <?php echo $_SESSION['userRole'] ?> </p>
                     </div>
                 </div>
@@ -134,9 +120,68 @@ $result = mysqli_query($conn,"SELECT * FROM userlogin WHERE username = '$usernam
             </div>
         </div>
 
-        <div class="main-area">
-            
-        </div>
+        <div class="aboutMainArea">
+
+            <div class="aboutHead">
+                <p>About WeWaffle</p>
+            </div>
+
+            <div class="circles">
+
+                <div class="aboutBox">
+                    <div class="aboutCircles">
+                        <img src="./Images/mission.png" alt="Icon of bulb for mission statament" height=300>
+                    </div>
+
+                    <div class="aboutDescription">
+                        <p id="circleReason">Mission</p>
+                        <p>Help companies and industries of all forms to boost internal business communication in a secure, fast and reliable enviroment</p>
+                    </div>
+                </div>
+
+                <div class="aboutBox">
+                    <div class="aboutCircles">
+                        <img src="./Images/overview.png" alt="Icon of page for overview statement" height=300>
+                    </div>
+
+                    <div class="aboutDescription">
+                        <p id="circleReason">Overview</p>
+                        <p>The WeWaffle web application allows business users to communicate instanly. Our application is built to prioritize user-friendly interactions</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="aboutHead">
+                <p>Meet the Owners</p>
+            </div>
+
+
+            <div class="circles">
+                <div class="aboutBox">
+                        <div class="aboutCircles">
+                            <img src="./Images/owner2.png" alt="Cartoon image of Ode Millington" height=300>
+                        </div>
+
+                        <div class="aboutDescription">
+                            <p id="circleReason">Ode Millington</p>
+                            <p id="ownerID">ID: 0161130</p>
+                            <p>Created to help companies and industries of all forms to boost internal business communication in a secure, fast and reliable enviroment</p>
+                        </div>
+                    </div>
+
+                    <div class="aboutBox">
+                        <div class="aboutCircles">
+                            <img src="./Images/owner1.png" alt="Cartoon image of Romario Bishop" height=300>
+                        </div>
+
+                        <div class="aboutDescription">
+                            <p id="circleReason">Romario Bishop</p>
+                            <p id="ownerID">ID: 016547</p>
+                            <p>Created to help companies and industries of all forms to boost internal business communication in a secure, fast and reliable enviroment</p>
+                        </div>
+                </div>
+            </div>
 
     </div>
 
