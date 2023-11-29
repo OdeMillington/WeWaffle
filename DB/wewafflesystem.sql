@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 28, 2023 at 05:37 PM
+-- Generation Time: Nov 29, 2023 at 03:38 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -31,9 +31,8 @@ CREATE TABLE `message` (
   `sender` varchar(30) NOT NULL,
   `receiver` varchar(30) NOT NULL,
   `messageTitle` varchar(70) NOT NULL,
-  `message` int(255) NOT NULL,
-  `messageType` varchar(10) NOT NULL DEFAULT 'normal',
-  `datesent` date NOT NULL,
+  `message` varchar(255) NOT NULL,
+  `datesent` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE current_timestamp(),
   `status` varchar(10) NOT NULL DEFAULT 'unread'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 

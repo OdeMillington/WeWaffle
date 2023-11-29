@@ -150,14 +150,14 @@ input[id='password'] {
     padding-left: 40px;
 }
 
-input[type='submit'] {
+input[type='submit'], input[type='reset'] {
     height: 38px;
     border-color: #191c3b;
     color:white;
     background-color:#191c3b;
 }
 
-input[type='submit']:hover {
+input[type='submit']:hover, input[type='reset']:hover {
     transform: translateY(-2px);
 }
 
@@ -448,3 +448,67 @@ ul {
 #ownerID {
     font-size:15px;
 }
+
+
+/* End of About Page Styles */
+
+
+/* Create Message Page Styles */
+
+.main-area {
+    width: 100%;
+}
+
+textarea {
+    font-family: 'Poppins', sans-serif;
+    max-width: 600px;
+    max-height: 350px;
+    padding: 1em;
+    border-radius: 20px;
+}
+
+input[id="messageTitle"] {
+    padding: 0 7px 0 7px;
+    height:45px;
+    width:300px;
+    font-size: 15px;
+}
+
+select[id="receiver"] {
+    font-family: 'Poppins', sans-serif;
+    height:40px
+}
+
+.formCrt .items {
+    border-radius: 25px;
+    padding: 2em;
+    background-color: rgb(146, 146, 146);
+}
+
+.formCrt {
+    margin-top:3em;
+    display: flex;
+    justify-content: center;
+}
+
+.formCrt .info {
+    background-image: url(./Images/copyright-regular.svg);
+    background-repeat: no-repeat;
+    background-size: 10px;
+    background-position: 375px 13px;
+}
+
+.buttons {
+    text-align: center;
+}
+
+.buttons input[type="submit"], .buttons input[type="reset"] {
+    height:45px;
+    width: 100px;
+}
+
+.buttons input[type="reset"] {
+    background-color: crimson;
+    border-color: crimson;
+}
+
