@@ -166,7 +166,7 @@ if (!$_SESSION['loggedIn']) {
                                                     continue;
                                                 }
 
-                                                echo "<option value='$receiver'>$receiver</option>";
+                                                echo "<option value='$receiver'> $receiver </option>";
                                             }
                                         }
 
@@ -188,8 +188,8 @@ if (!$_SESSION['loggedIn']) {
                             </div>
 
                             <div class="buttons">
-                                <input type="submit" value="Send" name="submit">
                                 <input type="reset">
+                                <input type="submit" value="Send" name="submit">
                             </div>
                         </div>
 

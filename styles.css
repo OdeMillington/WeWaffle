@@ -174,6 +174,9 @@ input[type='submit']:hover, input[type='reset']:hover {
     display:flex;
     justify-content:center;
     align-items:center;
+    position:absolute;
+   
+
 }
 #logo{
     position:absolute;
@@ -274,7 +277,7 @@ input[type='submit']:hover, input[type='reset']:hover {
     height:100vh;
     width: 100%;
     display: flex;
-    background-color: rgb(217, 217, 217);
+    background-color:#efefef;
 }
 
 .menu {
@@ -421,6 +424,7 @@ ul {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    overflow: hidden;
 }
 
 .aboutBox {
@@ -476,13 +480,13 @@ input[id="messageTitle"] {
 
 select[id="receiver"] {
     font-family: 'Poppins', sans-serif;
-    height:40px
+    height:40px;
 }
 
 .formCrt .items {
     border-radius: 25px;
     padding: 2em;
-    background-color: rgb(146, 146, 146);
+    background-color:#9A8C98;
 }
 
 .formCrt {
