@@ -316,6 +316,21 @@ a {
     color: white
 }
 
+/* changes link color on hover */
+.topMenu a:hover{
+    color: orange;
+}
+
+#about a:hover{
+    color:#567de8;
+
+} 
+
+#logout a:hover{
+    color:crimson;
+
+}
+
 #inbox {
     padding-left: 2em;
     background-image: url(./Images/inbox-solid.svg);
