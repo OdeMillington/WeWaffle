@@ -128,8 +128,12 @@ if (!$_SESSION['loggedIn']) {
 
                 <?php 
                     $username = $_SESSION['username'];
-                    $result = mysqli_query($conn, "SELECT * FROM `message` WHERE `receiver` = '$username'");
 
+                    if ($_SESSION['userRole'] == 'Admin') {
+                        $result = mysqli_query($conn, "SELECT * FROM `message` WHERE `receiver` = '$username' OR `receiver` = 'everyone' AND `sender` != '$username'");
+                    } else {
+                        $result = mysqli_query($conn, "SELECT * FROM `message` WHERE `receiver` = '$username' OR `receiver` = 'everyone'");
+                    }
                     $noReceived = strval(mysqli_num_rows($result));
 
                     echo "<p id='receiverCount'>$noReceived</p>";
