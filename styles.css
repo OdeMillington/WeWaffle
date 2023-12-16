@@ -249,7 +249,7 @@ input[type='submit']:hover, input[type='reset']:hover {
 /* End of Page Loader Formating */
 
 
-/* Message Page Styles */
+/* Menu Side Styles */
 
 .menuCompanyName {
     margin: 0px;
@@ -417,13 +417,63 @@ ul {
     list-style: none;
 
 }
+/* End Of Menu side Styles */
 
 
-/* End Of Message Page Styles */
+/* ---Message Inbox Styles--- */
+.message-body{
+    margin:3em 3em;
+    display: flex;
+    justify-content: center;
+    gap:3em;
+    width:100%;
+    max-width:100%;
+    
+}
+
+.inbox-left{
+    min-width:600px;
+    width:100%;
+    max-width:900px;
+    display: flex;
+    flex-direction:column;
+    background-color:#e8e6e3;
+    border-radius:20px;
+    border:#191c3b 5px solid;
+}
+
+.inbox-right{
+    min-width:400px;
+    width:100%;
+    max-width:500px;
+    display: flex;
+    flex-direction:column;
+    gap:5%
+    
+    
+}
+
+.notices{
+    height: 100%;
+    max-height:70%;
+    background-color:#e8e6e3;
+    border-radius:20px;
+    border:#191c3b 5px solid;
+}
+
+.mark-read{
+    height:100%;
+    max-height:25%;
+    background-color:#e8e6e3;
+    border-radius:20px;
+    border:#191c3b 5px solid;
+}
+
+
+/* End Of Message Inbox Styles */
 
 
 /* About Page Styles */
-
 
 .aboutHead {
     margin: 1em 0 1.5em 0;

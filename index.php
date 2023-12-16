@@ -2,7 +2,7 @@
 
 session_start();
 
- ?>
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -64,7 +64,7 @@ session_start();
                 <div class="items">
                     <div class="uname">
                         <label for="username">Username</label>
-                        <input type="text" id="username" name="username">
+                        <input type="text" id="username" name="username" required autocomplete="off">
                     </div>
                     <div class="pass">
                         <label for="password">Password</label>

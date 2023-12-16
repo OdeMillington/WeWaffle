@@ -154,6 +154,48 @@ $result = mysqli_query($conn,"SELECT * FROM userlogin WHERE username = '$usernam
             </div>
         </div>
 
+                    
+        <div class="message-body">
+
+           <div class="inbox-left">
+
+                <div class="inbox-header">
+
+
+                </div>
+
+                <div>
+
+                </div>
+
+           </div>    
+           
+
+           <div class="inbox-right">
+              <div class="notices">
+                
+                <div class="notices-header">
+
+
+                </div>
+                
+                <div>
+
+
+                </div>
+
+              </div> 
+
+              <div class="mark-read"> 
+
+                <div></div>
+                <div></div>
+
+              </div>       
+           </div> 
+            
+
+        </div>
     </div>
 
 </body>
