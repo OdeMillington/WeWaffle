@@ -592,6 +592,7 @@ ul {
 select[id="message-title"] {
     font-family: 'Poppins', sans-serif;
     height:40px;
+    max-width: 175px;
     padding-right:10px;
 }
 
