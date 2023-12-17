@@ -59,6 +59,8 @@ $result = mysqli_query($conn,"SELECT * FROM userlogin WHERE username = '$usernam
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="./Images/Favicon/favicon.ico">
+    <meta name="author" content="Ode Millington">
+    <meta name="author" content="Romario Bishop">
     <title>WeWaffle | Messaging</title>
 </head>
 <body>

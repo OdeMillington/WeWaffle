@@ -23,7 +23,9 @@ if (!$_SESSION['loggedIn']) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles.css">
     <link rel="icon" type="image/x-icon" href="../Images/Favicon/favicon.ico">
-    <title>WeWaffle | Messaging</title>
+    <meta name="author" content="Ode Millington">
+    <meta name="author" content="Romario Bishop">
+    <title>WeWaffle | Search Results</title>
 </head>
 <body>
 
