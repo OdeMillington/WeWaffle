@@ -17,7 +17,7 @@ session_start();
 
 <?php
 
-    $noticetitle = $_POST['noticetitle'];  
+    $noticetitle = mysqli_real_escape_string($conn, trim($_POST['noticetitle']));  
 
     $resultnotice = mysqli_query($conn,"SELECT * FROM message WHERE receiver = 'everyone' AND messageTitle='$noticetitle'");
 

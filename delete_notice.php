@@ -140,22 +140,6 @@ if (!$_SESSION['loggedIn']) {
 
         <div class="main-area">
 
-            <?php 
-            if (isset($_POST['submit'])) {
-                $sender = $_SESSION['username'];
-                $recipient = $_POST['receiver'];
-                $messageTitle = $_POST['messageTitle'];
-                $message = $_POST['messageText'];
-
-                $result = mysqli_query($conn, "INSERT INTO message VALUES('$sender', '$recipient', '$messageTitle', '$message', NOW(), 'unread')");
-                header("Location: message.php");
-            }
-
-            ?>
-
-
-            <?php $result = mysqli_query($conn, "SELECT * FROM userlogin"); ?>
-
             <div class="formCrt">
 
                 <div class="topForm">
