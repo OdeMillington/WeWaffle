@@ -21,7 +21,7 @@ if (!$_SESSION['loggedIn']) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="./styles.css">
     <link rel="icon" type="image/x-icon" href="../Images/Favicon/favicon.ico">
     <title>WeWaffle | Messaging</title>
 </head>
@@ -100,22 +100,22 @@ if (!$_SESSION['loggedIn']) {
 
 
                 <div class="topMenu">
-                    <p id="inbox"><a href="../message.php">Inbox</a></p>
-                    <p id="createMsg"><a href="../create_message.php">Create Message</a></p>
-                    <p id="msgSummary"><a href="../message_summary.php">Message Summary</a></p>
+                    <p id="inbox"><a href="./message.php">Inbox</a></p>
+                    <p id="createMsg"><a href="./create_message.php">Create Message</a></p>
+                    <p id="msgSummary"><a href="./message_summary.php">Message Summary</a></p>
                     
                     <?php
                     if ($_SESSION['userRole'] == "Admin") {
-                        echo '<p id="searchMsg"><a href="../search_message.php">Search Messages</a></p>';
-                        echo '<p id="delNotice"><a href="../delete_notice.php">Delete Notice</a></p>';
+                        echo '<p id="searchMsg"><a href="./search_message.php">Search Messages</a></p>';
+                        echo '<p id="delNotice"><a href="./delete_notice.php">Delete Notice</a></p>';
                     }
 
                     ?>
                 </div>
 
                 <div class="bottomMenu">
-                    <p id="about"><a href="../about.php">About</a></p>
-                    <p id="logout"><a href="../logout.php">Log Out</a></p>
+                    <p id="about"><a href="./about.php">About</a></p>
+                    <p id="logout"><a href="./logout.php">Log Out</a></p>
                 </div>
                 
             </div>

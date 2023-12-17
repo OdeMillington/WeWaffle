@@ -176,11 +176,11 @@ if (!$_SESSION['loggedIn']) {
 
 
                             <div class="messageTitle">
-                                <input type="text" name="messageTitle" id="messageTitle" placeholder="Message Title" autocomplete="off" maxlength="70">
+                                <input type="text" name="messageTitle" id="messageTitle" placeholder="Message Title" autocomplete="off" maxlength="70" required>
                             </div>
 
                             <div class="messageText">
-                                <textarea name="messageText" id="messageText" cols="80" rows="10" placeholder="Type Message Here" maxlength="255"></textarea>
+                                <textarea name="messageText" id="messageText" cols="80" rows="10" placeholder="Type Message Here" maxlength="255" required></textarea>
                             </div>
 
                             <div class="buttons">

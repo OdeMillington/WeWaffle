@@ -32,7 +32,7 @@ session_start();
         $result = mysqli_query($conn,"UPDATE message SET status='read' WHERE messageTitle ='$title'");
         }
    
-        header("../Location: message.php");
+        header("Location: ../message.php");
 ?>
 
 
