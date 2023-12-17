@@ -126,9 +126,9 @@ if (!$_SESSION['loggedIn']) {
         if (isset($_POST['submit'])) {
             $sender = $_SESSION['username'];
             $recipient = $_POST['receiver'];
-            $messageTitle = $_POST['messageTitle'];
-            $message = $_POST['messageText'];
-
+            $messageTitle = mysqli_real_escape_string($conn, $_POST['messageTitle']);
+            $message = mysqli_real_escape_string($conn, $_POST['messageText']);
+            
             $result = mysqli_query($conn, "INSERT INTO message VALUES('$sender', '$recipient', '$messageTitle', '$message', NOW(), 'unread')");
             header("Location: message.php");
         }
@@ -186,6 +186,7 @@ if (!$_SESSION['loggedIn']) {
                             <div class="buttons">
                                 <input type="reset">
                                 <input type="submit" value="Send" name="submit">
+
                             </div>
 
 
