@@ -140,7 +140,7 @@ if (!$_SESSION['loggedIn']) {
                     $searchQuery = mysqli_real_escape_string($conn, trim($_POST['messageText']));  // Get rid of white spaces to avoid invalid searches
 
 
-                    $getmessages = mysqli_query($conn,"SELECT * FROM message WHERE message='$searchQuery' OR message LIKE '%$searchQuery%'");
+                    $getmessages = mysqli_query($conn,"SELECT * FROM message WHERE message='$searchQuery' OR message LIKE '%$searchQuery%' ORDER BY datesent DESC");
                         if ($getmessages->num_rows > 0){
                             while($rowMsg=$getmessages->fetch_assoc()){
                                 

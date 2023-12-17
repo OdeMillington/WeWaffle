@@ -854,6 +854,13 @@ label[for="receiver"] {
     justify-content: center;
     align-items: center;
     font-weight: bold;
-    font-family: "Poppins";
+    font-family: "Poppins", sans-serif;
     font-size: 30px;
+}
+
+#searchTip {
+    font-family: 'Montserrat', sans-serif;
+    color:aliceblue;
+    text-align: center;
+    font-size: 25px;
 }

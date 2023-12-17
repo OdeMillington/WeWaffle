@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 18, 2023 at 12:01 AM
+-- Generation Time: Dec 18, 2023 at 12:16 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -50,9 +50,9 @@ INSERT INTO `message` (`sender`, `receiver`, `messageTitle`, `message`, `datesen
 ('Romario', 'Ode', 'Tech Troubles', 'Help! My laptop is acting up again. Anyone good with tech stuff? I could use some advice on how to fix these mysterious glitches.', '2023-12-17 17:33:08', 'unread'),
 ('Romario', 'Ode', 'Project Deadline Extension', 'Team, good news! The project deadline has been extended by a week. This gives us some breathing room to refine our work. Let\'s collaborate and make the most of this extra time.', '2023-12-17 17:34:51', 'unread'),
 ('Romario', 'Ode', 'IT Support Needed', 'Facing technical issues with your workstation? Contact IT support at extension 123 for immediate assistance. Let\'s ensure everyone is working seamlessly.', '2023-12-17 17:35:29', 'unread'),
-('Will', 'Ode', 'I\'m feeling Left Out', 'I\'m feeling really left out with no communication with me.  The constant talking with you and Romario is making me really sad and I find it ridiculous.  I\'ve received 1 message excluding the notices we all (Me and Ode) get.. ', '2023-12-17 17:40:16', 'unread'),
 ('Ode', 'Romario', 'Employee of the Month', 'Congratulations on being recognized as manager of the month!', '2023-12-17 17:46:24', 'unread'),
-('Romario', 'everyone', 'Office Renovation Update', 'Exciting changes are happening! Our office renovation is underway. Stay tuned for updates on the progress and any temporary adjustments to workspace arrangements.\r\n', '2023-12-17 18:02:17', 'unread');
+('Romario', 'everyone', 'Office Renovation Update', 'Exciting changes are happening! Our office renovation is underway. Stay tuned for updates on the progress and any temporary adjustments to workspace arrangements.\r\n', '2023-12-17 18:02:17', 'unread'),
+('Will', 'Ode', 'I am feeling Left Out', 'I\'m feeling really left out with no communication with me. The constant talking with you and Romario is making me really sad and I find it ridiculous. I\'ve received 1 message excluding the notices we all (you and Ode) get', '2023-12-17 19:16:10', 'unread');
 
 -- --------------------------------------------------------
 

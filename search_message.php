@@ -135,8 +135,10 @@ if (!$_SESSION['loggedIn']) {
                     <form action="./return_search.php" method="post">
                         <div class="items">
 
+                            <p id="searchTip">Leave blank to return all</p>
+
                             <div class="messageText">
-                                <textarea name="messageText" id="messageText" cols="80" rows="10" placeholder="Enter Keyword or Entire Message" maxlength="255"></textarea>
+                                <textarea name="messageText" id="messageText" cols="80" rows="10" placeholder="Enter Keyword or Entire Message." maxlength="255"></textarea>
                             </div>
 
                             <div class="buttons">
