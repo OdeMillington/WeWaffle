@@ -139,20 +139,16 @@ if (!$_SESSION['loggedIn']) {
             <?php $result = mysqli_query($conn, "SELECT * FROM userlogin"); ?>
 
             <div class="formCrt">
-                
+
+                <div class="topForm">
+                    <p id="companyName">WeWaffle</p>
+                    <p id="messageForm">Send A Message!</p>
+                </div>
+
+                <div>
                     <form action="" method="post">
                         <div class="items">
-                            <div class="info">
-            
-                                <div>
-                                    <p id="companyName">WeWaffle</p>
-                                </div>
 
-                                <div>
-                                    <p id="welcome">Send A Message!</p>
-                                </div>
-
-                            </div>
                             <div class="recipient">
                                 <label for="receiver">Select Recipient: </label>
                                 <select name="receiver" id="receiver">
@@ -180,21 +176,21 @@ if (!$_SESSION['loggedIn']) {
 
 
                             <div class="messageTitle">
-                                <input type="text" name="messageTitle" id="messageTitle" placeholder="Message Title">
+                                <input type="text" name="messageTitle" id="messageTitle" placeholder="Message Title" autocomplete="off" maxlength="70">
                             </div>
 
                             <div class="messageText">
-                                <textarea name="messageText" id="messageText" cols="80" rows="10" placeholder="Type Message Here"></textarea>
+                                <textarea name="messageText" id="messageText" cols="80" rows="10" placeholder="Type Message Here" maxlength="255"></textarea>
                             </div>
 
                             <div class="buttons">
                                 <input type="reset">
                                 <input type="submit" value="Send" name="submit">
                             </div>
-                        </div>
 
 
                     </form>
+                </div>
 
 
             </div>
