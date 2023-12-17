@@ -593,6 +593,7 @@ ul {
 .mark-read-function{
     margin-top: 20px;
     padding-top:5px;
+    font-weight: bold;
 }
 select[id="message-title"] {
     font-family: 'Poppins', sans-serif;
