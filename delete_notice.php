@@ -101,12 +101,12 @@ if (!$_SESSION['loggedIn']) {
                 <div class="topMenu">
                     <p id="inbox"><a href="message.php">Inbox</a></p>
                     <p id="createMsg"><a href="create_message.php">Create Message</a></p>
-                    <p id="msgSummary"><a href="message_summary.php"> <span class ="active-page">Message Summary</span> </a></p>
+                    <p id="msgSummary"><a href="message_summary.php">Message Summary</a></p>
                     
                     <?php
                     if ($_SESSION['userRole'] == "Admin") {
                         echo '<p id="searchMsg"><a href="search_message.php">Search Messages</a></p>';
-                        echo '<p id="delNotice"><a href="delete_notice.php">Delete Notice</a></p>';
+                        echo '<p id="delNotice"><a href="delete_notice.php"> <span class ="active-page"> Delete Notice </span> </a></p>';
                     }
 
                     ?>
@@ -120,62 +120,49 @@ if (!$_SESSION['loggedIn']) {
             </div>
         </div>
 
-        <div class="main-area summary">
+        <div class="main-area">
 
-            <div class="box messagesReceived">
-                
-                <p id="summaryText">Messages Received</p>
+        <?php 
+        if (isset($_POST['submit'])) {
+            $sender = $_SESSION['username'];
+            $recipient = $_POST['receiver'];
+            $messageTitle = $_POST['messageTitle'];
+            $message = $_POST['messageText'];
 
-                <?php 
-                    $username = $_SESSION['username'];
+            $result = mysqli_query($conn, "INSERT INTO message VALUES('$sender', '$recipient', '$messageTitle', '$message', NOW(), 'unread')");
+            header("Location: message.php");
+        }
 
-                    if ($_SESSION['userRole'] == 'Admin') {
-                        $result = mysqli_query($conn, "SELECT * FROM `message` WHERE `receiver` = '$username' OR `receiver` = 'everyone' AND `sender` != '$username'");
-                    } else {
-                        $result = mysqli_query($conn, "SELECT * FROM `message` WHERE `receiver` = '$username' OR `receiver` = 'everyone'");
-                    }
-                    $noReceived = strval(mysqli_num_rows($result));
+        ?>
 
-                    echo "<p id='receiverCount'>$noReceived</p>";
-                ?>
-            </div>
 
-            <div class="box unreadMessages">
-                
+            <?php $result = mysqli_query($conn, "SELECT * FROM userlogin"); ?>
+
+            <div class="formCrt">
+
+                <div class="topForm">
+                    <p id="companyName">WeWaffle</p>
+                    <p id="messageForm">Search Message!</p>
+                </div>
+
                 <div>
-                    <p id="summaryText">Unread Messages</p>
+                    <form action="./Redirect Pages/returnSearch.php" method="post">
+                        <div class="items">
+
+                            <div class="messageText">
+                                <textarea name="messageText" id="messageText" cols="80" rows="10" placeholder="Enter Keyword or Entire Message" maxlength="255"></textarea>
+                            </div>
+
+                            <div class="buttons">
+                                <input type="reset">
+                                <input type="submit" value="Search" name="submit">
+                            </div>
+
+
+                    </form>
                 </div>
 
 
-                <div>
-                    <?php 
-                        $username = $_SESSION['username'];
-                        $result = mysqli_query($conn, "SELECT * FROM `message` WHERE `receiver` = '$username' AND `status` = 'unread'");
-
-                        $noUnread = strval(mysqli_num_rows($result));
-
-                        echo "<p id='unreadCount'>$noUnread</p>";
-                    ?>
-                </div>                
-            </div>
-
-            <div class="box messagesSent">
-
-            <div>
-                <p id="summaryText">Messages Sent</p>
-            </div>
-
-
-            <div>
-                <?php 
-                        $username = $_SESSION['username'];
-                        $result = mysqli_query($conn, "SELECT * FROM `message` WHERE `sender` = '$username'");
-
-                        $noSent = strval(mysqli_num_rows($result));
-
-                        echo "<p id='sentCount'>$noSent</p>";
-                ?>  
-            </div>                 
             </div>
         </div>
 
@@ -183,4 +170,6 @@ if (!$_SESSION['loggedIn']) {
 
 </body>
 </html>
+
+
 

@@ -101,11 +101,11 @@ if (!$_SESSION['loggedIn']) {
                 <div class="topMenu">
                     <p id="inbox"><a href="message.php">Inbox</a></p>
                     <p id="createMsg"><a href="create_message.php">Create Message</a></p>
-                    <p id="msgSummary"><a href="message_summary.php">Message Summary</a></p>
+                    <p id="msgSummary"><a href="message_summary.php">Message Summary </a></p>
                     
                     <?php
                     if ($_SESSION['userRole'] == "Admin") {
-                        echo '<p id="searchMsg"><a href="search_message.php">Search Messages</a></p>';
+                        echo '<p id="searchMsg"><a href="search_message.php"> <span class ="active-page"> Search Messages </span></a></p>';
                         echo '<p id="delNotice"><a href="delete_notice.php">Delete Notice</a></p>';
                     }
 

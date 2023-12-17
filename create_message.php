@@ -100,7 +100,7 @@ if (!$_SESSION['loggedIn']) {
 
                 <div class="topMenu">
                     <p id="inbox"><a href="message.php">Inbox</a></p>
-                    <p id="createMsg"><a href="create_message.php">Create Message</a></p>
+                    <p id="createMsg"><a href="create_message.php"> <span class ="active-page">Create Message </span> </a></p>
                     <p id="msgSummary"><a href="message_summary.php">Message Summary</a></p>
                     
                     <?php

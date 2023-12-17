@@ -113,7 +113,7 @@ if (!$_SESSION['loggedIn']) {
                 </div>
 
                 <div class="bottomMenu">
-                    <p id="about"><a href="about.php">About</a></p>
+                    <p id="about"><a href="about.php"> <span class ="active-page"> About </span> </a></p>
                     <p id="logout"><a href="logout.php">Log Out</a></p>
                 </div>
                 
@@ -135,7 +135,9 @@ if (!$_SESSION['loggedIn']) {
 
                     <div class="aboutDescription">
                         <p id="circleReason">Mission</p>
-                        <p>Help companies and industries of all forms to boost internal business communication in a secure, fast and reliable enviroment</p>
+                        <p>Help companies and industries of all forms to boost internal business
+                            communication in a secure, fast and reliable enviroment
+                        </p>
                     </div>
                 </div>
 
@@ -146,7 +148,9 @@ if (!$_SESSION['loggedIn']) {
 
                     <div class="aboutDescription">
                         <p id="circleReason">Overview</p>
-                        <p>The WeWaffle web application allows business users to communicate instanly. Our application is built to prioritize user-friendly interactions</p>
+                        <p>The WeWaffle web application allows business users to communicate instanly.
+                            Our application is built to prioritize user-friendly interactions
+                        </p>
                     </div>
                 </div>
 
@@ -166,7 +170,9 @@ if (!$_SESSION['loggedIn']) {
                         <div class="aboutDescription">
                             <p id="circleReason">Ode Millington</p>
                             <p id="ownerID">ID: 0161130</p>
-                            <p>Created to help companies and industries of all forms to boost internal business communication in a secure, fast and reliable enviroment</p>
+                            <p>Created to help companies and industries of all forms to boost interna
+                               business communication in a secure, fast and reliable enviroment
+                            </p>
                         </div>
                     </div>
 
@@ -178,7 +184,9 @@ if (!$_SESSION['loggedIn']) {
                         <div class="aboutDescription">
                             <p id="circleReason">Romario Bishop</p>
                             <p id="ownerID">ID: 016547</p>
-                            <p>Created to help companies and industries of all forms to boost internal business communication in a secure, fast and reliable enviroment</p>
+                            <p>Created to help companies and industries of all forms to boost internal 
+                               business communication in a secure, fast and reliable enviroment
+                            </p>
                         </div>
                 </div>
             </div>

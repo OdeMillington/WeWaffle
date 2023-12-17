@@ -433,6 +433,11 @@ ul {
     list-style: none;
 
 }
+
+.active-page{
+    font-weight:bold;
+    color:#567de8;
+}
 /* End Of Menu side Styles */
 
 
@@ -667,6 +672,8 @@ input[name="titleread"]{
     display: flex;
     justify-content: center;
     flex-direction: column;
+    border-radius: 33px;
+    border: 5px solid #ff6b5b;
 }
 
 .topForm {

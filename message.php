@@ -127,7 +127,7 @@ $result = mysqli_query($conn,"SELECT * FROM userlogin WHERE username = '$usernam
 
                     <div class="username">
                         <p id="displayName"><?php echo $_SESSION['username'] ?></p>
-                        <p id="displayRole"> <?php echo $_SESSION['userRole'] ?> </p>
+                        <p id="displayRole"><?php echo $_SESSION['userRole'] ?> </p>
                     </div>
                 </div>
             </div>
@@ -136,7 +136,7 @@ $result = mysqli_query($conn,"SELECT * FROM userlogin WHERE username = '$usernam
 
 
                 <div class="topMenu">
-                    <p id="inbox"><a href="message.php">Inbox</a></p>
+                    <p id="inbox"><a href="message.php"> <span class ="active-page"> Inbox </span> </a></p>
                     <p id="createMsg"><a href="create_message.php">Create Message</a></p>
                     <p id="msgSummary"><a href="message_summary.php">Message Summary</a></p>
                     
