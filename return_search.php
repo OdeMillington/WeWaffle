@@ -135,7 +135,8 @@ if (!$_SESSION['loggedIn']) {
 
                 <?php
                     
-                    $searchQuery = trim($_POST['messageText']); // Get rid of white spaces to avoid invalid searches
+                    $searchQuery = mysqli_real_escape_string($conn, trim($_POST['messageText']));  // Get rid of white spaces to avoid invalid searches
+
 
                     $getmessages = mysqli_query($conn,"SELECT * FROM message WHERE message='$searchQuery' OR message LIKE '%$searchQuery%'");
                         if ($getmessages->num_rows > 0){
