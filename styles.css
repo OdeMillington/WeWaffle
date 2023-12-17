@@ -673,7 +673,7 @@ input[name="titleread"]{
     font-family: 'Poppins', sans-serif;
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
-    background-color:#872341;
+    background-color:rgb(32,35,48);
     width: 100%;
     display:flex;
     justify-content: center;
@@ -688,7 +688,7 @@ input[name="titleread"]{
 }
 
 #messageForm {
-    font-size: 20px;
+    font-size: 24px;
     color:aliceblue
 }
 
@@ -839,3 +839,13 @@ label[for="receiver"] {
     font-size:25px
 }
 
+/* Search Message Styles */
+
+#noResults {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-family: "Poppins";
+    font-size: 30px;
+}

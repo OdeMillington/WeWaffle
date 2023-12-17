@@ -135,9 +135,9 @@ if (!$_SESSION['loggedIn']) {
 
                 <?php
                     
-                    $searchQuery = $_POST['messageText'];
+                    $searchQuery = trim($_POST['messageText']); // Get rid of white spaces to avoid invalid searches
 
-                    $getmessages = mysqli_query($conn,"SELECT * FROM `message` WHERE `message` = '$searchQuery'");
+                    $getmessages = mysqli_query($conn,"SELECT * FROM message WHERE message='$searchQuery' OR message LIKE '%$searchQuery%'");
                         if ($getmessages->num_rows > 0){
                             while($rowMsg=$getmessages->fetch_assoc()){
                                 
@@ -177,7 +177,7 @@ if (!$_SESSION['loggedIn']) {
                                         </div>";  
                             }            
                         }  else {
-                            echo "<p> No results found </p>";
+                            echo "<p id='noResults'> No results found </p>";
                         }                       
                 ?>
                 
