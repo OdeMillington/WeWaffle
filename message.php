@@ -14,10 +14,12 @@ if (!isset($_SESSION['loggedIn'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
+
 } else {
 
     $username = $_SESSION['username'];
     $password = $_SESSION['password'];
+
 
 }
 
@@ -42,8 +44,9 @@ $result = mysqli_query($conn,"SELECT * FROM userlogin WHERE username = '$usernam
         $_SESSION['username'] = $username;
         $_SESSION['password'] = $password;
         $_SESSION['loggedIn'] = true;
-
+        
     }
+    
 
     
 
@@ -157,41 +160,168 @@ $result = mysqli_query($conn,"SELECT * FROM userlogin WHERE username = '$usernam
                     
         <div class="message-body">
 
-           <div class="inbox-left">
+            <div class="inbox-left">
 
                 <div class="inbox-header">
-
-
-                </div>
-
-                <div>
+                    <h2> Unread Messages </h2>
 
                 </div>
 
-           </div>    
+                <div class="inbox-messages-holder">
+
+                <?php
+                    
+                    $getmessages = mysqli_query($conn,"SELECT * FROM message WHERE receiver='$username' AND status='unread' ORDER BY datesent DESC");
+                        if ($getmessages->num_rows > 0){
+                            while($rowMsg=$getmessages->fetch_assoc()){
+                                
+                                $dateTimeFromDatabase = $rowMsg['datesent'];
+
+                                // Create a DateTime object
+                                $dateObject = new DateTime($dateTimeFromDatabase);
+                                
+                                // Format the time to get the 12-hour time with AM/PM
+                                $timeIn12HourFormat = $dateObject->format('h:i:s A'); // 'h' means 12-hour format, 'i' for minutes, 's' for seconds, 'A' for AM/PM
+
+                                $dateInYYYYMMDDFormat = $dateObject->format('Y/m/d');
+                                
+                                echo"
+                                        <div class='inbox-messages'>
+                                    
+                                            <div class='message-info'>
+                                                <div class='sender'>
+                                                    <p>From: ".$rowMsg['sender']."</p>
+                                                </div>
+
+                                                <div class='date'>
+                                                    <h4>".$dateInYYYYMMDDFormat." - ".$timeIn12HourFormat ."</h4>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class ='message-title'>
+                                                <h3> ".$rowMsg['messageTitle']."</h3>
+                                            </div>
+                                
+                                            <div class ='message-content'>
+                                                <p> ".$rowMsg['message']." </p>
+                                                
+                                            </div>
+                                            
+                                        </div>";  
+                            }            
+                        }                          
+                ?>
+                
+                </div>
+
+            </div>    
            
 
-           <div class="inbox-right">
-              <div class="notices">
-                
-                <div class="notices-header">
+            <div class="inbox-right">
+                        
+                <div class="notices">
+                    
+                    <div class="notices-header">
+                        <h1> Notices! </h1>
 
+                    </div>
+                    
+                    <div class="notices-messages-holder">
+                    <?php
+                    
+                        $getmessages = mysqli_query($conn,"SELECT * FROM message WHERE receiver='everyone' ORDER BY datesent DESC");
+                            if ($getmessages->num_rows > 0){
+                                while($rowMsg=$getmessages->fetch_assoc()){
+                                    
+                                    $dateTimeFromDatabase = $rowMsg['datesent'];
 
-                </div>
-                
-                <div>
+                                    // Create a DateTime object
+                                    $dateObject = new DateTime($dateTimeFromDatabase);
+                                    
+                                    // Format the time to get the 12-hour time with AM/PM
+                                    $timeIn12HourFormat = $dateObject->format('h:i:s A'); // 'h' means 12-hour format, 'i' for minutes, 's' for seconds, 'A' for AM/PM
 
+                                    $dateInYYYYMMDDFormat = $dateObject->format('Y/m/d');
+                                    
+                                    echo"
+                                            <div class='notice-messages'>
+                                        
+                                                <div class='notice-info'>
 
-                </div>
+                                                    <div class='date'>
+                                                        <h4>".$dateInYYYYMMDDFormat." - ".$timeIn12HourFormat ."</h4>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class ='notice-title'>
+                                                    <h3> ".$rowMsg['messageTitle']."</h3>
+                                                </div>
+                                    
+                                                <div class ='notice-content'>
+                                                    <p> ".$rowMsg['message']." </p>
+                                                    
+                                                </div>
+                                                
+                                            </div>";  
+                                }            
+                            }                          
+                    ?>
+                    
+                    </div>
 
-              </div> 
+                </div> 
 
-              <div class="mark-read"> 
+                <div class="mark-read"> 
 
-                <div></div>
-                <div></div>
+                    <div class="mark-read-header">
+                        <h2> Mark Messages As Read </h2>
+                    </div>
 
-              </div>       
+                    <div class="mark-read-function">
+                        <form action='message_markread.php' method='POST'>
+                                <label for="message-title">Select Message Title: </label>
+                                <select name="message-title" id="message-title">
+                                    <option value='None'> None</option>
+                                    <option value='Read All'> Read All</option>
+                                    <?php
+                                        $getTitles = mysqli_query($conn,"SELECT * FROM message WHERE receiver!='everyone' AND receiver ='$username' AND status ='unread'");
+                                        if (mysqli_num_rows($getTitles) > 0) {
+                                            while ($rowTitle = $getTitles -> fetch_assoc()) {
+                                                $title = $rowTitle['messageTitle'];
+
+                                                echo "<option value='$title'> $title </option>";
+                                            }
+                                        }
+
+                                    ?>
+                                </select>
+                                <input type="submit" value="enter" name="titleread">
+                        </form>        
+                        <!-- <?php
+                        
+                                    // if(isset($_POST['titleread'])){
+
+                                    //     $title = $_POST['message-title'];  
+                                    //     if($title == 'Read All'){
+
+                                    //         $alltitles = mysqli_query($conn,"SELECT * FROM message WHERE receiver!='everyone' AND receiver='$username' AND status='unread'");
+
+                                    //         if($alltitles->num_rows > 0){
+
+                                    //             while($rowTitles = $alltitles->fetch_assoc()){
+                                    //                 $everytitle = $rowTitles['messageTitle'];
+                                    //                 mysqli_query($conn,"UPDATE message SET status='read' WHERE messageTitle ='$everytitle'");
+                                    //             }
+                                    //         }
+                                    //     }else{
+                                    //     $result = mysqli_query($conn,"UPDATE message SET status='read' WHERE messageTitle ='$title'");
+                                    //     }
+                                    // }    
+                        ?> -->
+                              
+                    </div>
+
+                </div>       
            </div> 
             
 

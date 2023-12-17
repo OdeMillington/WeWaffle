@@ -7,6 +7,22 @@
     margin:0;   
 }
 
+::-webkit-scrollbar{
+    width:0.6em;
+
+}
+  
+  ::-webkit-scrollbar-track{
+    background-color:aliceblue;
+    border-bottom-right-radius: 15px;
+}
+  
+  ::-webkit-scrollbar-thumb{
+    background:rgb(32,35,48);
+    height: 5px;
+    border-radius:15px;
+}
+
 
 .login-page {
     height:100vh;
@@ -428,6 +444,7 @@ ul {
     gap:3em;
     width:100%;
     max-width:100%;
+    font-family: "Monsterrat", sans-serif;
     
 }
 
@@ -440,6 +457,8 @@ ul {
     background-color:#e8e6e3;
     border-radius:20px;
     border:#191c3b 5px solid;
+    gap:1px;
+    
 }
 
 .inbox-right{
@@ -449,11 +468,12 @@ ul {
     display: flex;
     flex-direction:column;
     gap:5%
-    
-    
+
 }
 
 .notices{
+    display:flex;
+    flex-direction: column;
     height: 100%;
     max-height:70%;
     background-color:#e8e6e3;
@@ -470,6 +490,116 @@ ul {
 }
 
 
+.inbox-header{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:5%;
+    background-color:#872341;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    color:aliceblue;
+    border-bottom:2px solid #191c3b;
+}
+
+.notices-header{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:10%;
+    background-color:#872341;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    color:aliceblue;
+    border-bottom:2px solid #191c3b;
+}
+
+.mark-read-header{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:15%;
+    background-color:#872341;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    color:aliceblue;
+    border-bottom:2px solid #191c3b;
+}
+
+.inbox-messages-holder{
+    display: flex;
+    flex-direction:column;
+    padding:5px;
+    overflow:auto;
+}
+.inbox-messages{
+
+    padding: 25px 40px;
+    border-bottom: 2px solid whitesmoke;
+    color:#111111;
+    font-family: "Poppins", sans-serif;
+
+}
+.message-title{
+    padding-bottom:4px;
+}
+
+.message-content{
+    font-size:18px;
+}
+
+.message-info{
+    display: flex;
+    justify-content: space-between;
+    font-size:15px;
+    font-weight:bold;
+
+}
+
+
+.notices-messages-holder{
+    display: flex;
+    flex-direction:column;
+    padding:5px;
+    overflow:auto;
+}
+.notice-messages{
+
+    padding: 25px 40px;
+    border-bottom: 2px solid whitesmoke;
+    color:#111111;
+    font-family: "Poppins", sans-serif;
+}
+.notice-title{
+    padding-bottom:4px;
+}
+
+.notice-content{
+    font-size:17px;
+}
+
+.notice-info{
+    display: flex;
+    font-size:15px;
+    text-align: center;
+
+}
+
+.mark-read-function{
+    margin-top: 20px;
+    padding-top:5px;
+}
+select[id="message-title"] {
+    font-family: 'Poppins', sans-serif;
+    height:40px;
+    padding-right:10px;
+}
+
+input[name="titleread"]{
+    margin-left:20px;
+    width:20%;
+    font-size:1em;
+}
 /* End Of Message Inbox Styles */
 
 
@@ -522,7 +652,7 @@ ul {
 /* End of About Page Styles */
 
 
-/* Create Message Page Styles */
+/* Create-Message Page Styles */
 
 .main-area {
     width: 100%;
@@ -551,7 +681,7 @@ select[id="receiver"] {
 .formCrt .items {
     border-radius: 25px;
     padding: 2em;
-    background-color:#9A8C98;
+    background-color:rgb(32,35,48);
 }
 
 .formCrt {
