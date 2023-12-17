@@ -122,18 +122,18 @@ if (!$_SESSION['loggedIn']) {
 
         <div class="main-area">
 
-        <?php 
-        if (isset($_POST['submit'])) {
-            $sender = $_SESSION['username'];
-            $recipient = $_POST['receiver'];
-            $messageTitle = $_POST['messageTitle'];
-            $message = $_POST['messageText'];
+            <?php 
+            if (isset($_POST['submit'])) {
+                $sender = $_SESSION['username'];
+                $recipient = $_POST['receiver'];
+                $messageTitle = $_POST['messageTitle'];
+                $message = $_POST['messageText'];
 
-            $result = mysqli_query($conn, "INSERT INTO message VALUES('$sender', '$recipient', '$messageTitle', '$message', NOW(), 'unread')");
-            header("Location: message.php");
-        }
+                $result = mysqli_query($conn, "INSERT INTO message VALUES('$sender', '$recipient', '$messageTitle', '$message', NOW(), 'unread')");
+                header("Location: message.php");
+            }
 
-        ?>
+            ?>
 
 
             <?php $result = mysqli_query($conn, "SELECT * FROM userlogin"); ?>
@@ -146,7 +146,7 @@ if (!$_SESSION['loggedIn']) {
                 </div>
 
                 <div>
-                    <form action="./Redirect Pages/returnSearch.php" method="post">
+                    <form action="./Redirect Pages/return_search.php" method="post">
                         <div class="items">
 
                             <div class="messageText">
@@ -157,7 +157,7 @@ if (!$_SESSION['loggedIn']) {
                                 <input type="reset">
                                 <input type="submit" value="Search" name="submit">
                             </div>
-
+                        </div>
 
                     </form>
                 </div>

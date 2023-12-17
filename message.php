@@ -278,11 +278,13 @@ $result = mysqli_query($conn,"SELECT * FROM userlogin WHERE username = '$usernam
                     </div>
 
                     <div class="mark-read-function">
-                        <form action='message_markread.php' method='POST'>
+                        <form action='./Redirect Pages/return_markread.php' method='POST'>
+
                                 <label for="message-title">Select Message Title: </label>
                                 <select name="message-title" id="message-title">
+
                                     <option value='None'> None</option>
-                                    <option value='Read All'> Read All</option>
+                                    <option value='Read All'> Read All </option>
                                     <?php
                                         $getTitles = mysqli_query($conn,"SELECT * FROM message WHERE receiver!='everyone' AND receiver ='$username' AND status ='unread'");
                                         if (mysqli_num_rows($getTitles) > 0) {
@@ -296,29 +298,8 @@ $result = mysqli_query($conn,"SELECT * FROM userlogin WHERE username = '$usernam
                                     ?>
                                 </select>
                                 <input type="submit" value="enter" name="titleread">
-                        </form>        
-                        <!-- <?php
-                        
-                                    // if(isset($_POST['titleread'])){
-
-                                    //     $title = $_POST['message-title'];  
-                                    //     if($title == 'Read All'){
-
-                                    //         $alltitles = mysqli_query($conn,"SELECT * FROM message WHERE receiver!='everyone' AND receiver='$username' AND status='unread'");
-
-                                    //         if($alltitles->num_rows > 0){
-
-                                    //             while($rowTitles = $alltitles->fetch_assoc()){
-                                    //                 $everytitle = $rowTitles['messageTitle'];
-                                    //                 mysqli_query($conn,"UPDATE message SET status='read' WHERE messageTitle ='$everytitle'");
-                                    //             }
-                                    //         }
-                                    //     }else{
-                                    //     $result = mysqli_query($conn,"UPDATE message SET status='read' WHERE messageTitle ='$title'");
-                                    //     }
-                                    // }    
-                        ?> -->
-                              
+                        </form>
+                            
                     </div>
 
                 </div>       

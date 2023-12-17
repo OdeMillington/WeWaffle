@@ -9,7 +9,7 @@ session_start();
 
     if (!$_SESSION['loggedIn']) {
         $_SESSION['error'];
-        header("Location: index.php");
+        header("Location: ../index.php");
     }
 
     $username = $_SESSION['username'];
@@ -32,7 +32,7 @@ session_start();
         $result = mysqli_query($conn,"UPDATE message SET status='read' WHERE messageTitle ='$title'");
         }
    
-        header("Location: message.php");
+        header("../Location: message.php");
 ?>
 
 

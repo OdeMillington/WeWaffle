@@ -23,6 +23,24 @@ if (!$_SESSION['loggedIn']) {
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="./Images/Favicon/favicon.ico">
     <title>WeWaffle | Messaging</title>
+    <style>
+        
+        #error2 {
+            font-family: 'Montserrat', sans-serif;
+            color:crimson;
+            font-weight: bold;
+            text-align:center;
+            font-size: 20px;
+        }
+        
+        #success {
+            font-family: 'Montserrat', sans-serif;
+            color:#65B741;
+            font-weight: bold;
+            text-align:center;
+            font-size: 16px;
+        }
+        </style>
 </head>
 <body>
 
@@ -122,18 +140,18 @@ if (!$_SESSION['loggedIn']) {
 
         <div class="main-area">
 
-        <?php 
-        if (isset($_POST['submit'])) {
-            $sender = $_SESSION['username'];
-            $recipient = $_POST['receiver'];
-            $messageTitle = $_POST['messageTitle'];
-            $message = $_POST['messageText'];
+            <?php 
+            if (isset($_POST['submit'])) {
+                $sender = $_SESSION['username'];
+                $recipient = $_POST['receiver'];
+                $messageTitle = $_POST['messageTitle'];
+                $message = $_POST['messageText'];
 
-            $result = mysqli_query($conn, "INSERT INTO message VALUES('$sender', '$recipient', '$messageTitle', '$message', NOW(), 'unread')");
-            header("Location: message.php");
-        }
+                $result = mysqli_query($conn, "INSERT INTO message VALUES('$sender', '$recipient', '$messageTitle', '$message', NOW(), 'unread')");
+                header("Location: message.php");
+            }
 
-        ?>
+            ?>
 
 
             <?php $result = mysqli_query($conn, "SELECT * FROM userlogin"); ?>
@@ -142,22 +160,44 @@ if (!$_SESSION['loggedIn']) {
 
                 <div class="topForm">
                     <p id="companyName">WeWaffle</p>
-                    <p id="messageForm">Search Message!</p>
+                    <p id="messageForm">Delete a Notice!</p>
                 </div>
 
                 <div>
-                    <form action="./Redirect Pages/returnSearch.php" method="post">
+                    <form action="./Redirect Pages/return_delete.php" method="post">
                         <div class="items">
 
                             <div class="messageText">
-                                <textarea name="messageText" id="messageText" cols="80" rows="10" placeholder="Enter Keyword or Entire Message" maxlength="255"></textarea>
+                                <textarea name="noticetitle" id="messageText" cols="80" rows="10" placeholder="Enter The Title of The Notice" maxlength="255"></textarea>
+                            </div>
+
+                            <div class="error">
+                            <?php 
+                            
+                            if (isset($_SESSION['error2'])) {
+                                echo "<p id='error2'>Notice Not Found(Check Spelling)<p>";
+                                unset($_SESSION['error2']); 
+                            }
+                            
+                            ?>
+                            <?php 
+                            
+                            if (isset($_SESSION['success'])) {
+                                echo "<p id='success'>  Deleted Notice Successfully <p>";
+                                unset($_SESSION['success']); 
+                            }
+                            
+                            ?>
+                            
+                            
                             </div>
 
                             <div class="buttons">
                                 <input type="reset">
-                                <input type="submit" value="Search" name="submit">
+                                <input type="submit" value="Delete" name="delete">
                             </div>
 
+                        </div>
 
                     </form>
                 </div>
@@ -167,7 +207,7 @@ if (!$_SESSION['loggedIn']) {
         </div>
 
     </div>
-
+                  
 </body>
 </html>
 
