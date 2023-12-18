@@ -185,7 +185,7 @@ if (!$_SESSION['loggedIn']) {
 
                         <div class="aboutDescription">
                             <p id="circleReason">Romario Bishop</p>
-                            <p id="ownerID">ID: 016547</p>
+                            <p id="ownerID">ID: 0161547</p>
                             <p>Created to help companies and industries of all forms to boost internal 
                                business communication in a secure, fast and reliable enviroment
                             </p>
